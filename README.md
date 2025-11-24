@@ -1,2 +1,1 @@
-# Vue
-just a vue demo
+Just a Vue project
