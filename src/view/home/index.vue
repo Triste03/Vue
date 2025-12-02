@@ -11,6 +11,9 @@
 
 <style scoped lang="less">
 .home {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 </style>

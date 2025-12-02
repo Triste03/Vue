@@ -1,21 +1,37 @@
 import { home_path } from "@/constants";
+import { RouteRecordRaw } from "vue-router";
+import {
+  House,
+  FolderOpened,
+} from '@element-plus/icons-vue'
 
-const layoutRouters = [
+export const layoutRouters: RouteRecordRaw[] = [
   {
     path: "/home",
     name: "home",
     component: () => import("@/view/home/index.vue"),
     meta: {
       title: "首页",
+      icon: House,
     },
   },
   {
     path: "/file",
     name: "file",
-    component: () => import("@/view/file/index.vue"),
     meta: {
       title: "文件管理",
+      icon: FolderOpened,
     },
+    children:[
+      {
+        path: "library",
+        name: "file-library",
+        component: () => import("@/view/file/file-library/index.vue"),
+        meta: {
+          title: "文件库",
+        }
+      }
+    ]
   },
 ];
 

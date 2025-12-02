@@ -1,38 +1,35 @@
 <template>
+  <el-container>
+    <Aside />
     <el-container>
-        <Aside />
-        <el-container>
-            <el-header class="header">Header</el-header>
-            <el-main class="main">
-                <RouterView />
-            </el-main>
-            <el-footer class="footer">Footer</el-footer>
-        </el-container>
+      <Header />
+      <el-main class="main">
+        <RouterView />
+      </el-main>
+      <el-footer class="footer">
+        Copyright © {{ new Date().getFullYear() }} Vue
+      </el-footer>
     </el-container>
+  </el-container>
 </template>
 
 <script setup lang="ts">
 import Aside from './aside/index.vue'
-
+import Header from './header/index.vue'
 </script>
 
-
-
 <style scoped lang="less">
-.aside {
-    height: 100vh;
-    background: lightgreen;
-}
-
-.header {
-    background: black;
-}
-
 .main {
-    background: #fff;
+  padding: 16px 20px;
+  background: #f3f4f6;
 }
 
 .footer {
-    background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
 }
 </style>
